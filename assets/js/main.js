@@ -155,4 +155,30 @@
   // invoke theme check on initial load
   themeCheck();
   /* ========  themeSwitcher End ========= */
+  // ===== Menu Filter System
+  const menuTabs = document.querySelectorAll('.menu-tab');
+  const menuCards = document.querySelectorAll('.menu-card');
+
+  if (menuTabs.length > 0 && menuCards.length > 0) {
+    menuTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const category = tab.getAttribute('data-category');
+        
+        // Actualizar tabs activas
+        menuTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        
+        // Filtrar cards
+        menuCards.forEach(card => {
+          card.classList.remove('show');
+          
+          if (category === 'todos' || card.getAttribute('data-category') === category) {
+            setTimeout(() => {
+              card.classList.add('show');
+            }, 100);
+          }
+        });
+      });
+    });
+  }
 })();
