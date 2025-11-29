@@ -157,3 +157,31 @@
 .dark .menu-card-description {
   color: var(--color-dark-6);
 }
+
+/* Scrollbar personalizado para la lista de mensajes */
+#lista-mensajes::-webkit-scrollbar {
+  width: 8px;
+}
+
+#lista-mensajes::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+#lista-mensajes::-webkit-scrollbar-thumb {
+  background: #dc2626; /* Color rojo primario */
+  border-radius: 4px;
+}
+
+#lista-mensajes::-webkit-scrollbar-thumb:hover {
+  background: #b91c1c;
+}
+
+/* Dark mode scrollbar */
+.dark #lista-mensajes::-webkit-scrollbar-track {
+  background: #2d3748;
+}
+
+.dark #lista-mensajes::-webkit-scrollbar-thumb {
+  background: #ef4444;
+}
